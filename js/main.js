@@ -45,7 +45,7 @@ Main.prototype = {
 	update: function() {
 
 		this.game.physics.arcade.collide(this.player, this.floor);
-		this.game.physics.arcade.collide(this.player, this.boxes, this.gameOver, null, this);
+		this.game.physics.arcade.collide(this.player, this.boxes, this.incrementScore, null, this);
 
 		var onTheGround = this.player.body.touching.down;
 
