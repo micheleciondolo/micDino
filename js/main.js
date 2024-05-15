@@ -119,7 +119,7 @@ Main.prototype = {
 
 		}
 	},
-		addBenefit: function () {
+		addBenefits: function () {
 		var tilesNeeded2 = Math.floor( Math.random() * (5 - 0));
 
 		// var gap = Math.floor( Math.random() * (tilesNeeded - 0));
