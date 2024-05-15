@@ -95,7 +95,7 @@ Main.prototype = {
 		var tile = this.commesse.getFirstDead();
 
 		tile.reset(x, y);
-		tile.body.velocity.x = this.tileVelocity2;
+		tile.body.velocity.x = this.tileVelocity;
 		tile.body.immovable = true;
 		tile.checkWorldBounds = true;
 		tile.outOfBoundsKill = true;
@@ -120,7 +120,7 @@ Main.prototype = {
 		}
 	},
 		addBenefits: function () {
-		var tilesNeeded2 = Math.floor( Math.random() * (5 - 0));
+		var tilesNeeded2 = Math.floor( Math.random() * (1 - 0));
 
 		
 	
