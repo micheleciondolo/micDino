@@ -120,7 +120,7 @@ Main.prototype = {
 		}
 	},
 		addBenefits: function () {
-		var tilesNeeded2 = Math.floor( Math.random() * (1 - 0));
+		var tilesNeeded2 = Math.floor( Math.random() * (2 - 0));
 
 		
 	
