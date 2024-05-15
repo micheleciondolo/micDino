@@ -129,7 +129,7 @@ if (this.rate2 > 200) {
 			this.tileVelocity = -(675000 / this.rate2);
 
 		}
-		for (var i = 0; i < tilesNeeded; i++) {
+		for (var i = 0; i < tilesNeeded2; i++) {
 
 			
 			this.addCommesse(this.game.world.width , this.game.world.height -
@@ -184,8 +184,8 @@ if (this.rate2 > 200) {
 
 	createPlayer: function () {
 
-		this.player = this.game.add.sprite(this.game.world.width/5, this.game.world.height -
-			(this.tileHeight*2), 'player');
+		this.player = this.game.add.sprite((this.game.world.width/5)*4, (this.game.world.height -
+			(this.tileHeight*2))*4, 'player');
 		this.player.scale.setTo(1, 1);
 		this.player.anchor.setTo(0.5, 1.0);
 		this.game.physics.arcade.enable(this.player);
