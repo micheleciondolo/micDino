@@ -15,6 +15,7 @@ Main.prototype = {
 		this.tileWidth = this.game.cache.getImage('tile').width;
 		this.tileHeight = this.game.cache.getImage('tile').height;
 		this.boxHeight = this.game.cache.getImage('box').height;
+		this.commesseHeight = this.game.cache.getImage('commesse').height;
 
 		this.game.stage.backgroundColor = '479cde';
 
@@ -30,6 +31,11 @@ Main.prototype = {
 		this.boxes.createMultiple(20, 'box');
 		this.game.world.bringToTop(this.floor);
 
+
+		this.commesse = this.game.add.group();
+		this.commesse.enableBody = true;
+		this.commesse.createMultiple(20, 'commesse');
+		this.game.world.bringToTop(this.floor);
 		this.jumping = false;
 
 		this.addBase();
@@ -45,7 +51,8 @@ Main.prototype = {
 	update: function() {
 
 		this.game.physics.arcade.collide(this.player, this.floor);
-		this.game.physics.arcade.collide(this.player, this.boxes, this.incrementScore, null, this);
+		this.game.physics.arcade.collide(this.player, this.boxes, this.gameOver, null, this);
+		this.game.physics.arcade.collide(this.player, this.commesse, this.incrementScore, null, this);
 
 		var onTheGround = this.player.body.touching.down;
 
