@@ -31,7 +31,7 @@ GameOver.prototype = {
 		this.scoreLabel.anchor.setTo(0.5, 0.5);
 		this.scoreLabel.align = 'center';
 		this.game.world.bringToTop(this.scoreLabel);
-		this.scoreLabel.text = "Your score is " + (score);
+		this.scoreLabel.text = "Il tuo punteggio è di " + (score);
 
 		this.highScore = this.game.add.text(this.game.world.centerX
 			, this.game.world.centerY, "0", { font: scoreFont, fill: "#fff" });
@@ -42,11 +42,11 @@ GameOver.prototype = {
 		this.hs = window.localStorage.getItem('HighScore');
 
 		if (this.hs == null) {
-			this.highScore.setText("High score: " + score);
+			this.highScore.setText("Massimo Punteggio : " + score);
 			window.localStorage.setItem('HighScore', score)
 		}
 		else if (parseInt(this.hs) < score) {
-			this.highScore.setText("High score: " + (score ));
+			this.highScore.setText("Massimo Punteggio : " + (score ));
 			window.localStorage.setItem('HighScore', score)
 
 		}
@@ -56,7 +56,7 @@ GameOver.prototype = {
 
 		this.restart = this.game.add.text(this.game.world.centerX
 			, this.game.world.centerY * 1.5
-			, "Press \n Space to retry ", { font: scoreFont, fill: "#fff" });
+			, "Premi \n per riprovà zi! ", { font: scoreFont, fill: "#fff" });
 		this.restart.anchor.setTo(0.5, 0.5);
 		this.restart.align = 'center';
 		this.game.world.bringToTop(this.restart);
