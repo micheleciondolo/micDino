@@ -51,7 +51,7 @@ GameOver.prototype = {
 
 		}
 		else {
-			this.highScore.setText("High score: " + this.hs);
+			this.highScore.setText("Massimo Punteggio : " + this.hs);
 		}
 
 		this.restart = this.game.add.text(this.game.world.centerX
