@@ -9,6 +9,8 @@ Main.prototype = {
 	create: function() {
 
 		this.tileVelocity = -450;
+		
+		this.tileVelocity2 = -450;
 		this.rate = 1500;
 		this.rate2 = 2000;
 		score = 0;
