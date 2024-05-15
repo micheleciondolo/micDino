@@ -87,7 +87,17 @@ Main.prototype = {
 		tile.outOfBoundsKill = true;
 		// tile.body.friction.x = 1000;
 	},
+	addCommesse: function (x, y) {
 
+		var tile = this.commesse.getFirstDead();
+
+		tile.reset(x, y);
+		tile.body.velocity.x = this.tileVelocity;
+		tile.body.immovable = true;
+		tile.checkWorldBounds = true;
+		tile.outOfBoundsKill = true;
+		// tile.body.friction.x = 1000;
+	},
 	addObstacles: function () {
 		var tilesNeeded = Math.floor( Math.random() * (5 - 0));
 		// var gap = Math.floor( Math.random() * (tilesNeeded - 0));
@@ -100,6 +110,8 @@ Main.prototype = {
 		for (var i = 0; i < tilesNeeded; i++) {
 
 			this.addBox(this.game.world.width , this.game.world.height -
+				this.tileHeight - ((i + 1)* this.boxHeight ));
+			this.addCommesse(this.game.world.width , this.game.world.height -
 				this.tileHeight - ((i + 1)* this.boxHeight ));
 
 		}
