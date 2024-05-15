@@ -95,7 +95,7 @@ Main.prototype = {
 		var tile = this.commesse.getFirstDead();
 
 		tile.reset(x, y);
-		tile.body.velocity.x = this.tileVelocity;
+		tile.body.velocity.x = this.tileVelocity2;
 		tile.body.immovable = true;
 		tile.checkWorldBounds = true;
 		tile.outOfBoundsKill = true;
@@ -127,6 +127,7 @@ Main.prototype = {
 if (this.rate2 > 200) {
 			this.rate2 -= 10;
 			this.tileVelocity2 = -(675000 / this.rate2);
+
 
 		}
 		for (var i = 0; i < tilesNeeded2; i++) {
