@@ -45,6 +45,8 @@ Main.prototype = {
 		this.cursors = this.game.input.keyboard.createCursorKeys();
 
 		this.timer = game.time.events.loop(this.rate, this.addObstacles, this);
+		this.timer2 = game.time.events.loop(this.rate2, this.addBenefits, this);
+
 		//this.Scoretimer = game.time.events.loop(100, this.incrementScore, this);
 
 	},
