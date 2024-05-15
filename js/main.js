@@ -10,6 +10,7 @@ Main.prototype = {
 
 		this.tileVelocity = -450;
 		this.rate = 1500;
+		this.rate2 = 2000;
 		score = 0;
 
 		this.tileWidth = this.game.cache.getImage('tile').width;
@@ -100,6 +101,7 @@ Main.prototype = {
 	},
 	addObstacles: function () {
 		var tilesNeeded = Math.floor( Math.random() * (5 - 0));
+
 		// var gap = Math.floor( Math.random() * (tilesNeeded - 0));
 		if (this.rate > 200) {
 			this.rate -= 10;
@@ -111,6 +113,23 @@ Main.prototype = {
 
 			this.addBox(this.game.world.width , this.game.world.height -
 				this.tileHeight - ((i + 1)* this.boxHeight ));
+			
+
+		}
+	},
+		addBenefit: function () {
+		var tilesNeeded2 = Math.floor( Math.random() * (5 - 0));
+
+		// var gap = Math.floor( Math.random() * (tilesNeeded - 0));
+	
+if (this.rate2 > 200) {
+			this.rate2 -= 10;
+			this.tileVelocity = -(675000 / this.rate2);
+
+		}
+		for (var i = 0; i < tilesNeeded; i++) {
+
+			
 			this.addCommesse(this.game.world.width , this.game.world.height -
 				this.tileHeight - ((i + 1)* this.boxHeight ));
 
