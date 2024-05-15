@@ -126,12 +126,11 @@ Main.prototype = {
 
 		
 	
-if (this.rate2 > 200) {
-			this.rate2 -= 10;
-			this.tileVelocity2 = -(675000 / this.rate2);
+
+			this.tileVelocity2 = this.tileVelocity;
 
 
-		}
+		
 		for (var i = 0; i < tilesNeeded2; i++) {
 
 			
