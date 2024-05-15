@@ -8,7 +8,7 @@ Preload.prototype = {
 		this.game.load.image('commesse', 'assets/commesse.png');
 
 		
-		this.game.load.spritesheet('player', 'assets/player2.png', 24, 24, 9, -2);
+		this.game.load.spritesheet('player', 'assets/player2.png', 96, 96, 9, -2);
 		
 
 	},
