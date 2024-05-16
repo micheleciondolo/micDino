@@ -57,8 +57,8 @@ Main.prototype = {
 
 		this.game.physics.arcade.collide(this.player, this.floor);
 		this.game.physics.arcade.collide(this.player, this.boxes, this.gameOver, null, this);
-		//this.game.physics.arcade.collide(this.player, this.commesse, this.incrementScore, null, this);
-	        this.physics.add.overlap(this.player, this.commmesse, sovrapposti, null, this);
+		this.game.physics.arcade.collide(this.player, this.commesse, this.sovrapposti, null, this);
+	        //this.physics.add.overlap(this.player, this.commmesse, sovrapposti, null, this);
 
 		var onTheGround = this.player.body.touching.down;
 
