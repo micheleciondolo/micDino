@@ -40,7 +40,7 @@ GameOver.prototype = {
 		this.game.world.bringToTop(this.highScore);
 
 
-		this.highScore.setText("Raccogli tutte le commesse, evitando i CETRIOLONI! \n Se arrivi a 20 hai svoltato il mese e puoi chiudere il rapportino!!!);
+		this.highScore.setText("Raccogli tutte le commesse, evitando i CETRIOLONI! \n Se arrivi a 20 hai svoltato il mese e puoi chiudere il rapportino!!!");
 		
 	
 
