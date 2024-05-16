@@ -231,7 +231,7 @@ Main.prototype = {
 		score += 1;
 		this.scoreLabel.setText(score);
 		this.game.world.bringToTop(this.scoreLabel);
-		this.highScore.setText("HS: " + window.localStorage.getItem('HighScore'));
+		this.highScore.setText("Record: " + window.localStorage.getItem('HighScore'));
 		this.game.world.bringToTop(this.highScore);
 
 
