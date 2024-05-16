@@ -163,7 +163,7 @@ Main.prototype = {
 
 		}
 	},
-	function sovrapposti (player, commessa)
+	 sovrapposti: function (player, commessa)
 {
 //var crystal = crystals.create(spike.x, spike.y, ‘crystal’);
 //crystal.setScale(1.25)
