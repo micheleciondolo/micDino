@@ -1,6 +1,6 @@
-var GameOver = function(game){};
+var Intro = function(game){};
 
-GameOver.prototype = {
+Intro.prototype = {
 
   	create: function(){
 
