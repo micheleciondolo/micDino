@@ -57,7 +57,7 @@ Main.prototype = {
 
 		this.game.physics.arcade.collide(this.player, this.floor);
 		this.game.physics.arcade.collide(this.player, this.boxes, this.gameOver, null, this);
-		this.game.physics.arcade.collide(this.player, this.commesse, this.incrementScore, null, this);
+		//this.game.physics.arcade.collide(this.player, this.commesse, this.incrementScore, null, this);
 	        this.physics.add.overlap(this.player, this.commmesse, sovrapposti, null, this);
 
 		var onTheGround = this.player.body.touching.down;
@@ -168,6 +168,7 @@ Main.prototype = {
 //var crystal = crystals.create(spike.x, spike.y, ‘crystal’);
 //crystal.setScale(1.25)
 commessa.destroy();
+this.incrementScore();
 
 },
 	upInputIsActive: function (duration) {
