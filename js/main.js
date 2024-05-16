@@ -12,7 +12,7 @@ Main.prototype = {
 		
 		this.tileVelocity2 = -450;
 		this.rate = 1500;
-		this.rate2 = 2000;
+		this.rate2 = 2305;
 		score = 0;
 
 		this.tileWidth = this.game.cache.getImage('tile').width;
