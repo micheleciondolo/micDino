@@ -58,6 +58,7 @@ Main.prototype = {
 		this.game.physics.arcade.collide(this.player, this.floor);
 		this.game.physics.arcade.collide(this.player, this.boxes, this.gameOver, null, this);
 		this.game.physics.arcade.collide(this.player, this.commesse, this.incrementScore, null, this);
+	        this.physics.add.overlap(this.player, this.commmesse, sovrapposti, null, this);
 
 		var onTheGround = this.player.body.touching.down;
 
@@ -162,7 +163,13 @@ Main.prototype = {
 
 		}
 	},
+	function sovrapposti (player, commessa)
+{
+//var crystal = crystals.create(spike.x, spike.y, ‘crystal’);
+//crystal.setScale(1.25)
+commessa.destroy();
 
+},
 	upInputIsActive: function (duration) {
 		var isActive = false;
 
@@ -225,7 +232,7 @@ Main.prototype = {
 
 	},
 
-	incrementScore: function (player,commessa) {
+	incrementScore: function () {
 
 
 		score += 1;
@@ -233,7 +240,6 @@ Main.prototype = {
 		this.game.world.bringToTop(this.scoreLabel);
 		this.highScore.setText("Record: " + window.localStorage.getItem('HighScore'));
 		this.game.world.bringToTop(this.highScore);
-		commessa.destroy();
 
 
 	},
