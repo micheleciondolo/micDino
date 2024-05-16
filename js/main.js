@@ -225,7 +225,7 @@ Main.prototype = {
 
 	},
 
-	incrementScore: function () {
+	incrementScore: function (player,commessa) {
 
 
 		score += 1;
@@ -233,7 +233,7 @@ Main.prototype = {
 		this.game.world.bringToTop(this.scoreLabel);
 		this.highScore.setText("Record: " + window.localStorage.getItem('HighScore'));
 		this.game.world.bringToTop(this.highScore);
-		this.commesse.destroy();
+		commessa.destroy();
 
 
 	},
