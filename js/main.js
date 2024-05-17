@@ -10,9 +10,7 @@ Main.prototype = {
 
 		this.tileVelocity = -450;
 		
-		this.tileVelocity2 = -450;
 		this.rate = 1500;
-		this.rate2 = 2305;
 		score = 0;
 
 		this.tileWidth = this.game.cache.getImage('tile').width;
@@ -46,8 +44,10 @@ Main.prototype = {
 		this.createPlayer();
 		this.cursors = this.game.input.keyboard.createCursorKeys();
 
-		this.timer = game.time.events.loop(this.rate, this.addObstacles, this);
-		this.timer2 = game.time.events.loop(this.rate2, this.addBenefits, this);
+		this.timer = game.time.events.loop(this.rate, this.randomObject, this);
+    
+
+	
 
 		//this.Scoretimer = game.time.events.loop(100, this.incrementScore, this);
 
@@ -57,7 +57,7 @@ Main.prototype = {
 
 		this.game.physics.arcade.collide(this.player, this.floor);
 		this.game.physics.arcade.collide(this.player, this.boxes, this.gameOver, null, this);
-		this.game.physics.arcade.collide(this.player, this.commesse, this.sovrapposti, null, this);
+		this.game.physics.arcade.overlap(this.player, this.commesse, this.sovrapposti, null, this);
 	        //this.physics.add.overlap(this.player, this.commmesse, sovrapposti, null, this);
 
 		var onTheGround = this.player.body.touching.down;
@@ -98,16 +98,29 @@ Main.prototype = {
 		var tile = this.commesse.getFirstDead();
 
 		tile.reset(x, y);
-		tile.body.velocity.x = this.tileVelocity2;
+		tile.body.velocity.x = this.tileVelocity;
 		tile.body.immovable = true;
 		tile.checkWorldBounds = true;
 		tile.outOfBoundsKill = true;
 		// tile.body.friction.x = 1000;
 	},
+	randomObject : function() {
+	var randomNumber = Math.random();
+
+
+if (randomNumber < 0.5) {
+    this.addObstacles();
+}
+else
+{ 
+this.addBenefits(); 
+
+}
+	},
 	addObstacles: function () {
 		var tilesNeeded = Math.floor( Math.random() * (5 - 0));
 
-		// var gap = Math.floor( Math.random() * (tilesNeeded - 0));
+
 		if (this.rate > 200) {
 			this.rate -= 10;
 			this.tileVelocity = -(675000 / this.rate);
@@ -127,8 +140,13 @@ Main.prototype = {
 
 		
 	
+		if (this.rate > 200) {
+			this.rate -= 10;
+			this.tileVelocity = -(675000 / this.rate);
 
-			this.tileVelocity2 = this.tileVelocity;
+		}
+
+
 
 
 		
@@ -165,6 +183,12 @@ Main.prototype = {
 	},
 	 sovrapposti: function (player, commessa)
 {
+new Audio('music/coin.mp3').play();
+
+if(score >= 19) {
+this.game.state.start('HaiVintoFratello');
+return;
+}
 //var crystal = crystals.create(spike.x, spike.y, ‘crystal’);
 //crystal.setScale(1.25)
 commessa.destroy();
@@ -212,22 +236,22 @@ this.incrementScore();
 
 		var scoreFont = "70px Arial";
 
-		this.scoreLabel = this.game.add.text(this.game.world.centerX, 70, "0", { font: scoreFont, fill: "#fff" });
+		this.scoreLabel = this.game.add.text(this.game.world.centerX, 70, "Commesse : 0", { font: scoreFont, fill: "#fff" });
 		this.scoreLabel.anchor.setTo(0.5, 0.5);
 		this.scoreLabel.align = 'center';
 		this.game.world.bringToTop(this.scoreLabel);
 
-		this.highScore = this.game.add.text(this.game.world.centerX * 1.6, 70, "0", { font: scoreFont, fill: "#fff" });
+		this.highScore = this.game.add.text(this.game.world.centerX * 1.6, 70, "Record : 0", { font: scoreFont, fill: "#fff" });
 		this.highScore.anchor.setTo(0.5, 0.5);
 		this.highScore.align = 'right';
 		this.game.world.bringToTop(this.highScore);
 
 		if (window.localStorage.getItem('HighScore') == null) {
-			this.highScore.setText(0);
+			this.highScore.setText("Record : "+ 0);
 			window.localStorage.setItem('HighScore', 0);
 		}
 		else {
-			this.highScore.setText(window.localStorage.getItem('HighScore'));
+			this.highScore.setText("Record :"+ window.localStorage.getItem('HighScore'));
 		}
 		// this.scoreLabel.bringToTop()
 
@@ -237,15 +261,18 @@ this.incrementScore();
 
 
 		score += 1;
-		this.scoreLabel.setText(score);
+		
+		this.scoreLabel.setText("Commesse : "+score);
 		this.game.world.bringToTop(this.scoreLabel);
-		this.highScore.setText("Record: " + window.localStorage.getItem('HighScore'));
+		this.highScore.setText("Record : " + window.localStorage.getItem('HighScore'));
 		this.game.world.bringToTop(this.highScore);
+
 
 
 	},
 
 	gameOver: function(){
+	new Audio('music/crash.mp3').play();
 		this.game.state.start('GameOver');
 	}
 
