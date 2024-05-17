@@ -23,6 +23,7 @@ HaiVintoFratello.prototype = {
 	},
 
 	showScore: function () {
+		window.localStorage.setItem('HighScore', 20);
 
 		var scoreFont = "60px Arial";
 
