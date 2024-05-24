@@ -9,6 +9,7 @@ Intro.prototype = {
 
 			this.quit = this.game.input.keyboard.addKey(Phaser.Keyboard.ESC);
 			this.resume = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+			this.game.input.onDown.add(this.resumeGame, this);
 			this.showScore();
 	},
 
