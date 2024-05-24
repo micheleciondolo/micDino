@@ -49,7 +49,7 @@ Intro.prototype = {
 
 		this.restart = this.game.add.text(this.game.world.centerX
 			, this.game.world.centerY * 1.5
-			, "Gioca con la freccia in su ! \n Premi spazio per iniziare ", { font: scoreFont, fill: "#fff" });
+			, "Gioca con la freccia in su ! \n Premi spazio o clicca per iniziare ", { font: scoreFont, fill: "#fff" });
 		this.restart.anchor.setTo(0.5, 0.5);
 		this.restart.align = 'center';
 		this.game.world.bringToTop(this.restart);
