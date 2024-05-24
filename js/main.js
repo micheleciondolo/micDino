@@ -95,7 +95,7 @@ Main.prototype = {
 	},
 	addCommesse: function (x, y) {
 
-    var tile = this.boxes.getFirstDead();
+    var tile = this.commesse.getFirstDead();
     
     if (tile) {
         tile.reset(x, y);
