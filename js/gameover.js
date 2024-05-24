@@ -8,6 +8,7 @@ GameOver.prototype = {
 
 			this.quit = this.game.input.keyboard.addKey(Phaser.Keyboard.ESC);
 			this.resume = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+		    this.game.input.onDown.add(this.resumeGame, this);
 			this.showScore();
 	},
 
@@ -56,7 +57,7 @@ GameOver.prototype = {
 
 		this.restart = this.game.add.text(this.game.world.centerX
 			, this.game.world.centerY * 1.5
-			, "Premi spazio \n per riprovà zi! ", { font: scoreFont, fill: "#fff" });
+			, "Premi spazio o clicca \n per riprovà zi! ", { font: scoreFont, fill: "#fff" });
 		this.restart.anchor.setTo(0.5, 0.5);
 		this.restart.align = 'center';
 		this.game.world.bringToTop(this.restart);
