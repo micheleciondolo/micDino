@@ -187,7 +187,7 @@ this.addBenefits();
 {
 new Audio('music/coin.mp3').play();
 
-if(score >= 19) {
+if(score >= 2) {
 score=20;
 this.game.state.start('HaiVintoFratello');
 return;
