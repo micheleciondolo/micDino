@@ -107,8 +107,6 @@ Main.prototype = {
     }
 	},
 	randomObject : function() {
-
-	if(score ==20) return;
 	var randomNumber = Math.random();
 
 
@@ -190,7 +188,6 @@ this.addBenefits();
 new Audio('music/coin.mp3').play();
 
 if(score >= 2) {
-score=20;
 this.game.state.start('HaiVintoFratello');
 return;
 }
