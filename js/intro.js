@@ -65,8 +65,7 @@ Intro.prototype = {
     restartGame: function() {
 
         this.game.state.start("Main");
-    }
-
+    },
     repartGame: function() {
         mainMusic.play();
         this.game.state.start("Main");
