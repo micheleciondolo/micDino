@@ -95,14 +95,16 @@ Main.prototype = {
 	},
 	addCommesse: function (x, y) {
 
-		var tile = this.commesse.getFirstDead();
-
-		tile.reset(x, y);
-		tile.body.velocity.x = this.tileVelocity;
-		tile.body.immovable = true;
-		tile.checkWorldBounds = true;
-		tile.outOfBoundsKill = true;
-		// tile.body.friction.x = 1000;
+    var tile = this.boxes.getFirstDead();
+    
+    if (tile) {
+        tile.reset(x, y);
+        tile.body.velocity.x = this.tileVelocity;
+        tile.body.immovable = true;
+        tile.checkWorldBounds = true;
+        tile.outOfBoundsKill = true;
+        // tile.body.friction.x = 1000;
+    }
 	},
 	randomObject : function() {
 
