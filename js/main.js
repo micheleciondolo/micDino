@@ -105,6 +105,8 @@ Main.prototype = {
 		// tile.body.friction.x = 1000;
 	},
 	randomObject : function() {
+
+	if(score >= 19) return;
 	var randomNumber = Math.random();
 
 
